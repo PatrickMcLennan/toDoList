@@ -8,16 +8,16 @@ class ToDos extends Component {
   }
 
   render() {
-    const { todos } = this.props;
+    const { todos, markComplete } = this.props;
     return todos.map(todo => (
-      <ToDoItem key={todo.id} todo={todo} markComplete={this.markComplete} />
+      <ToDoItem key={todo.id} todo={todo} markComplete={markComplete} />
     ));
   }
 }
 
 ToDos.propTypes = {
   todos: PropTypes.arrayOf(Object).isRequired,
-  todosmarkComplete: PropTypes.func.isRequired,
+  markComplete: PropTypes.func.isRequired,
 };
 
 

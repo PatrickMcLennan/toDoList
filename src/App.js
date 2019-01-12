@@ -24,14 +24,14 @@ class App extends Component {
   }
 
   markComplete = (id) => {
-
+    console.log(id);
   }
 
   render() {
     const { todos } = this.state;
     return (
       <div className="App">
-        <ToDos todos={todos} markComplete={markComplete} />
+        <ToDos todos={todos} markComplete={this.markComplete} />
       </div>
     );
   }
