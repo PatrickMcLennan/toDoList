@@ -23,8 +23,18 @@ class App extends Component {
     ],
   }
 
+  theToggler = bool => (bool ? !bool : bool);
+
   markComplete = (id) => {
-    console.log(id);
+    const { todos } = this.state;
+    this.setState({
+      todos: todos.map((todo) => {
+        if (todo.id === id) {
+          todo.completed = !todo.completed;
+        }
+        return todo;
+      }),
+    });
   }
 
   render() {

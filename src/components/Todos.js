@@ -3,10 +3,6 @@ import PropTypes from 'prop-types';
 import ToDoItem from './ToDoItem';
 
 class ToDos extends Component {
-  markComplete = () => {
-
-  }
-
   render() {
     const { todos, markComplete } = this.props;
     return todos.map(todo => (

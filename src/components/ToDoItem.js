@@ -12,10 +12,6 @@ class ToDoItem extends Component {
     };
   }
 
-  markComplete = (e) => {
-
-  }
-
   render() {
     const { todo, markComplete } = this.props;
     const { id, title } = todo;
@@ -37,6 +33,7 @@ ToDoItem.propTypes = {
     title: PropTypes.string,
     completed: PropTypes.bool,
   }).isRequired,
+  markComplete: PropTypes.func.isRequired,
 };
 
 export default ToDoItem;
