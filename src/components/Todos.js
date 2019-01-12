@@ -4,9 +4,9 @@ import ToDoItem from './ToDoItem';
 
 class ToDos extends Component {
   render() {
-    const { todos, markComplete } = this.props;
+    const { todos, markComplete, delTodo } = this.props;
     return todos.map(todo => (
-      <ToDoItem key={todo.id} todo={todo} markComplete={markComplete} />
+      <ToDoItem key={todo.id} todo={todo} markComplete={markComplete} delTodo={delTodo} />
     ));
   }
 }
@@ -14,6 +14,7 @@ class ToDos extends Component {
 ToDos.propTypes = {
   todos: PropTypes.arrayOf(Object).isRequired,
   markComplete: PropTypes.func.isRequired,
+  delTodo: PropTypes.func.isRequired,
 };
 
 

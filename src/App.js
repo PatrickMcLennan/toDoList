@@ -23,8 +23,6 @@ class App extends Component {
     ],
   }
 
-  theToggler = bool => (bool ? !bool : bool);
-
   markComplete = (id) => {
     const { todos } = this.state;
     this.setState({
@@ -37,11 +35,18 @@ class App extends Component {
     });
   }
 
+  delTodo = (id) => {
+    const { todos } = this.state;
+    this.setState({
+      todos: [...todos.filter(todo => todo.id !== id)],
+    });
+  }
+
   render() {
     const { todos } = this.state;
     return (
       <div className="App">
-        <ToDos todos={todos} markComplete={this.markComplete} />
+        <ToDos todos={todos} markComplete={this.markComplete} delTodo={this.delTodo} />
       </div>
     );
   }

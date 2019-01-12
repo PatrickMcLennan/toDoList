@@ -13,7 +13,7 @@ class ToDoItem extends Component {
   }
 
   render() {
-    const { todo, markComplete } = this.props;
+    const { todo, markComplete, delTodo } = this.props;
     const { id, title } = todo;
     return (
       <div style={this.getStyle()}>
@@ -21,6 +21,7 @@ class ToDoItem extends Component {
           <input type="checkbox" onChange={markComplete.bind(this, id)} />
           {' '}
           {title}
+          <button onClick={delTodo.bind(this, id)} style={btnStyle}>x</button>
         </p>
       </div>
     );
@@ -34,6 +35,18 @@ ToDoItem.propTypes = {
     completed: PropTypes.bool,
   }).isRequired,
   markComplete: PropTypes.func.isRequired,
+  delTodo: PropTypes.func.isRequired,
+};
+
+const btnStyle = {
+  background: '#ff0000',
+  color: '#fff',
+  border: 'none',
+  padding: '5px 5px',
+  borderRadius: '50%',
+  cursor: 'pointer',
+  float: 'right',
+  fontSize: '20px',
 };
 
 export default ToDoItem;
