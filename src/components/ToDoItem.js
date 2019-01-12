@@ -30,7 +30,7 @@ class ToDoItem extends Component {
 
 ToDoItem.propTypes = {
   todo: PropTypes.shape({
-    id: PropTypes.number,
+    id: PropTypes.string,
     title: PropTypes.string,
     completed: PropTypes.bool,
   }).isRequired,
